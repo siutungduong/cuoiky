@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+  .container-all-products
+    .container-left
+      .line
+        .filled(style="width: 25%; height: 2px; background-color: #D2691E;")
+        .empty(style="width: 75%; height: 2px; background-color: #e0e0e0;")
+    .container-right
+      h3 #{title}
+      .radio-group
+        each option, index in ['Tên A-Z', 'Tên Z-A', 'Giá thấp đến cao', 'Giá cao xuống thấp']
+          .radio-item
+            input(type="radio" id=`option${index}` name="options" value=option)
+            label(for=`option${index}`) #{option}
+      if products.length
+        .product-grid
+          each product in products
+            .product-card
+              a(href=`/details/${product._id}`)
+                img(src=product.image alt=product.name)
+                p.product-type #{product.type}
+                p.product-name= product.name
+                p.product-price Giá: #{product.price} VND
+        .pagination
+          if totalPages > 1
+            a(href=`/website/list_all_product?page=1${query ? `&query=${query}` : ''}` class=`${page === 1 ? 'disabled' : ''}`) Trang đầu
+            if page > 1
+              a(href=`/website/list_all_product?page=${page - 1}${query ? `&query=${query}` : ''}`) Trước
+            each num in Array(totalPages).fill().map((_, i) => i + 1)
+              if num >= page - 2 && num <= page + 2 
+                if num === page
+                  span.page-current #{num}
+                else
+                  a(href=`/website/list_all_product?page=${num}${query ? `&query=${query}` : ''}`) #{num}
+            if page < totalPages
+              a(href=`/website/list_all_product?page=${page + 1}${query ? `&query=${query}` : ''}`) Sau
+            a(href=`/website/list_all_product?page=${totalPages}${query ? `&query=${query}` : ''}` class=`${page === totalPages ? 'disabled' : ''}`) Trang cuối 
+      else
+        p.message Không có sản phẩm nào thuộc loại này.

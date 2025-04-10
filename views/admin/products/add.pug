@@ -1,0 +1,24 @@
+extends ../../adminlayout
+
+block main-content 
+  form(action='/admin/products/add', method='POST', class='product-form')
+    h2 Thêm sản phẩm
+    div
+      label(for='type') Loại sản phẩm
+      input(type='text', placeholder="Nhập loại sản phẩm...", name='type', required=true)
+    div
+      label(for='name') Tên sản phẩm
+      input(type='text', placeholder="Nhập tên sản phẩm...", name='name', required=true)
+    div
+      label(for='price') Giá sản phẩm
+      input(type='number', placeholder="Nhập giá sản phẩm...", name='price', required=true)
+    div
+      label(for='image') Hình ảnh sản phẩm
+      input(type='text', placeholder="Tải lên hình ảnh sản phẩm...", name='image', id='image-url', required=true)
+      img(id='image-preview', class='image-preview')
+    div
+      label(for='brand') Thương hiệu
+      input(type='text', placeholder="Nhập tên thương hiệu của sản phẩm...", name='brand', required=true)
+    div
+      button(type='submit') Thêm sản phẩm
+      button(type='button', id='cancel-button') Hủy

@@ -1,0 +1,49 @@
+/* CSS cho trang đặt hàng thành công */
+.success-page {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .success-page h1 {
+    color: #4CAF50;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .success-page p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .success-page ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 400px;
+  }
+  
+  .success-page ul li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .success-page .btn-href {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .success-page .btn-href:hover {
+    background-color: #45a049;
+  }
+  

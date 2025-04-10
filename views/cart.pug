@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  h1 #{title}
+  
+  if cart.length > 0
+    table.cart-table
+      thead
+        tr
+          th Ảnh
+          th Tên sản phẩm
+          th Loại
+          th Mã code sản phẩm
+          th Giá
+          th Số lượng
+          th Tổng
+          th Hành động
+      tbody
+        each item in cart
+          tr
+            td: img(src=item.product.image, alt=item.product.name, width=50)
+            td #{item.product.name}
+            td #{item.product.type}
+            td #{item.product.productCode}
+            td #{item.product.price} VND
+            td
+              button.btn-quantity(onclick=`updateCart('${item.product._id}', 'decrease')`) -
+              span #{item.quantity}
+              button.btn-quantity(onclick=`updateCart('${item.product._id}', 'increase')`) +
+            td #{item.quantity * item.product.price} VND
+            td
+              button.btn-remove(onclick=`removeFromCart('${item.product._id}')`) Xóa
+
+      //- Hàng tổng số tiền
+      tr
+        td(colspan="6") TỔNG CỘNG
+        td #{totalAmount} VND
+        td
+
+    form(action="/checkout", method="get")
+      button.btn-buy(type="submit") Thanh toán ngay
+  else
+    p.cart-empty Giỏ hàng của bạn đang trống!

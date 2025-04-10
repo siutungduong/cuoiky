@@ -1,0 +1,293 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/website/style.css')
+    link(rel='stylesheet', href='/stylesheets/website/home.css')
+    link(rel='stylesheet', href='/stylesheets/website/list_all_product.css')
+    link(rel='stylesheet', href='/stylesheets/website/account.css')
+    link(rel='stylesheet', href='/stylesheets/website/cart.css')
+    link(rel='stylesheet', href='/stylesheets/website/order-success.css')
+    link(rel='stylesheet', href='/stylesheets/website/checkout.css')
+    link(rel='stylesheet', href='/stylesheets/website/products_details.css')
+    script(src='/javascripts/scripts.js')
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
+  body
+    .header
+      .section1
+        .container.first Tìm cửa hàng
+        .container Hỗ trợ mua hàng
+      .section2
+        .container.first Sản phẩm đã xem
+        .container Yêu thích
+        if (isAdmin)
+          .container.end
+            a(href="/admin/products") Admin Page
+    .navbar
+      .logo
+        img(src="/images/logo.png" alt="Logo")
+      .search-bar
+        form(action="/website/list_all_product" method="get")
+          input(type="text" name="query" placeholder="Bạn cần tìm gì?")
+          button(type="submit")
+            i.fa.fa-search 
+      .hotline
+        i.fa.fa-phone
+        span Hotline: 0123456789
+      .account
+        i.fa.fa-user
+        if (user)
+          a(href="#")= user.firstName + ' ' + user.lastName
+          ul.dropdown-menu
+            li
+              a(href="/account") Tài khoản
+            li
+              a(href="/logout") Đăng xuất
+        else
+          a(href="#") Tài khoản
+          ul.dropdown-menu
+            li
+              a(href="/login") Đăng nhập
+            li 
+              a(href="/register") Đăng ký
+      .cart
+        i.fa.fa-shopping-cart
+        span 
+          a(href="/cart") Giỏ hàng
+        .badge #{cartItemCount}
+    .horizontal-menu
+      ul.menu
+        li
+          a(href="/" class=(currentPage === 'home' ? 'active' :'')) Trang chủ
+        li.dropdown
+          a(href="/website/list_all_product" class=(currentPage === 'all-products' ? 'active' : '')) Tất cả sản phẩm
+            i.fa.fa-chevron-down
+          ul.dropdown-menu
+            li
+              a(href="/sale-end-of-year") Sale cuối năm
+            li
+              a(href="/new-year-gifts") Quà Tết 2024
+            li.dropdown
+              a(href="#") Thực phẩm ăn liền
+                i.fa.fa-chevron-down
+              ul.sub-dropdown-menu
+                li
+                  a(href="/instant-noodles") Mì ăn liền
+                li
+                  a(href="/instant-cakes") Phở - Cơm - Cháo
+                li
+                  a(href="/instant-cakes") Bánh ăn liền
+                li
+                  a(href="/instant-cakes") Thực phẩm ăn liền khác
+            li.dropdown
+              a(href="#") Thực phẩm đông lạnh
+                i.fa.fa-chevron-down
+              ul.sub-dropdown-menu
+                li
+                  a(href="/instant-noodles") Thịt đông lạnh
+                li
+                  a(href="/instant-cakes") Hải sản đông lạnh
+                li
+                  a(href="/instant-cakes") Thực phẩm đông lạnh khác
+            li.dropdown
+              a(href="#") Thực phẩm trữ mát
+                i.fa.fa-chevron-down
+              ul.sub-dropdown-menu
+                li
+                  a(href="/instant-noodles") Bánh gạo
+                li
+                  a(href="/instant-cakes") Bánh bao
+                li
+                  a(href="/instant-cakes") Bánh mandu
+            li.dropdown
+              a(href="#") Thực phẩm tươi
+                i.fa.fa-chevron-down
+              ul.sub-dropdown-menu
+                li
+                  a(href="/instant-noodles") Rau củ
+                li
+                  a(href="/instant-cakes") Trái cây
+                li
+                  a(href="/instant-cakes") Kim chi - củ cải
+            li.dropdown
+              a(href="#") Thực phẩm đóng hộp
+                i.fa.fa-chevron-down
+              ul.sub-dropdown-menu
+                li
+                  a(href="/instant-noodles") Thịt hộp
+                li
+                  a(href="/instant-cakes") Cá hộp
+                li
+                  a(href="/instant-cakes") Hải sản hộp
+                li
+                  a(href="/instant-noodles") Rau củ hộp
+                li
+                  a(href="/instant-cakes") Trái cây hộp
+                li
+                  a(href="/instant-cakes") Thực phẩm đóng hộp khác
+            li
+              a(href="/sale-end-of-year") Nhu yếu phẩm
+            li.dropdown
+              a(href="#") Gia vị 
+                i.fa.fa-chevron-down
+              ul.sub-dropdown-menu
+                li
+                  a(href="/instant-noodles") Gia vị dạng khô
+                li
+                  a(href="/instant-cakes") Gia vị dạng lỏng
+                li
+                  a(href="/instant-cakes") Gia vị dạng hỗn hợp
+            li.dropdown
+              a(href="#") Đồ ăn vặt
+                i.fa.fa-chevron-down
+              ul.sub-dropdown-menu
+                li
+                  a(href="/instant-noodles") Bánh snack
+                li
+                  a(href="/instant-cakes") Bánh 
+                li
+                  a(href="/instant-cakes") Kẹo
+                li
+                  a(href="/instant-cakes") Ăn vặt
+            li.dropdown
+              a(href="#") Kem
+                i.fa.fa-chevron-down
+              ul.sub-dropdown-menu
+                li
+                  a(href="/instant-noodles") Kem hộp
+                li
+                  a(href="/instant-cakes") Kem cây
+            li.dropdown
+              a(href="#") Đồ uống
+                i.fa.fa-chevron-down
+              ul.sub-dropdown-menu
+                li
+                  a(href="/instant-noodles") Sữa
+                li
+                  a(href="/instant-cakes") Nước ngọt
+                li
+                  a(href="/instant-cakes") Nước suối
+                li
+                  a(href="/instant-noodles") Nước trái cây
+                li
+                  a(href="/instant-cakes") Trà và cà phê
+                li
+                  a(href="/instant-cakes") Đồ uống có cồn
+            li.dropdown
+              a(href="#") Sức khỏe và làm đẹp
+                i.fa.fa-chevron-down
+              ul.sub-dropdown-menu
+                li
+                  a(href="/instant-noodles") Sâm
+                li
+                  a(href="/instant-cakes") Sản phẩm làm đẹp
+                li
+                  a(href="/instant-cakes") Sản phẩm sức khỏe
+            li.dropdown
+              a(href="#") Thực phẩm tiện lợi
+                i.fa.fa-chevron-down
+              ul.sub-dropdown-menu
+                li
+                  a(href="/instant-noodles") Chăm sóc cá nhân
+                li
+                  a(href="/instant-cakes") Đồ dùng nội trợ
+                li
+                  a(href="/instant-cakes") Đồ dùng nhà tắm
+            li
+              a(href="/sale-end-of-year") Mẹ & bé
+            
+                
+        li
+          a(href="/store-locations") Hệ thống cửa hàng
+        li
+          a(href="/about") Giới thiệu
+        li
+          a(href="/news") Tin tức
+        li
+          a(href="/customer-policy") Chính sách khách hàng
+        li
+          a(href="/contact") Liên hệ
+        li.dropdown
+          a(href="#") Thông tin chính sách
+            i.fa.fa-chevron-down
+          ul.dropdown-menu
+            li
+              a(href="/return-policy") Chính sách đổi trả
+            li
+              a(href="/return-policy") Chính sách vận chuyển 
+            li
+              a(href="/return-policy") Chính sách thanh toán
+            li
+              a(href="/warranty-policy") Chính sách bảo hành
+    .main-content
+      block content
+    footer
+      .footer-row
+        .footer-item
+          img(src="/images/footer_policy_img_1.png", alt="Image 1")
+          p ĐẶT HÀNG TIỆN LỢI
+        .footer-item
+          img(src="/images/footer_policy_img_2.png", alt="Image 2")
+          p GIAO HÀNG NHANH CHÓNG
+        .footer-item
+          img(src="/images/footer_policy_img_3.png", alt="Image 3")
+          p NHẬP KHẨU TRỰC TIẾP TỪ HÀN QUỐC
+      .footer-row
+        .footer-column
+          .footer-column-row
+            img(src="/images/footer-logo.png", alt="Location Icon", class="top-left")
+          .footer-column-row
+            .content
+              i.fa.fa-location-dot
+              p 17 ĐƯỜNG D15A, P. PHƯỚC LONG B, TP.THỦ ĐỨC, HCM
+          .footer-column-row
+            img(src="/images/logo-thong-bao-website.png", alt="Bottom Left Image", class="bottom-left")
+        .footer-column
+          .footer-column-row
+            p(style= "font-size:20px") Hỗ trợ khách hàng
+          .footer-column-row.contact-info-row
+            img(src="/images/footer-phone.png", alt="Support Image", class="support-image")
+            .contact-info
+              p 0934721989
+              p TỔNG ĐÀI TRỰC 24/24
+          .footer-column-row
+            img(src="/images/footer-email.png", alt="Email Image", class="email-image")
+            p luanvo.100404@gmail.com
+          .footer-column-row
+            .icons
+              i.fa-brands.fa-facebook-f
+              i.fa-brands.fa-twitter
+              i.fa-brands.fa-youtube
+              i.fa-brands.fa-instagram
+        .footer-column
+          .footer-column-row
+            p.danh-muc(style="font-size:20px") Danh mục 
+          .footer-column-row.column-3-row-2
+            .container
+              .row
+                p Trang chủ
+              .row
+                p Giới thiệu
+              .row
+                p Sản phẩm
+        .footer-column
+          .footer-column-row
+            p.chinh-sach(style="font-size:20px") Chính sách khách hàng
+          .footer-column-row.column-4-row-2
+            .container
+              .row
+                p Chính sách bảo mật 
+              .row
+                p Chính sách vận chuyển
+              .row
+                p Chính sách đổi trả
+              .row
+                p Chính sách thanh toán
+              .row
+                p Chính sách sử dụng
+    .footer-copyright-row
+      p.footer-copyright
+        | © Bản quyền thuộc về 
+        strong Xin Chào Korea Mart
+        |  | Cung cấp bởi Sapo, copyright
+

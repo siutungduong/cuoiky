@@ -1,0 +1,52 @@
+extends ../../adminlayout
+
+block main-content
+    div.order-management
+        h1 Quản lý đơn hàng
+        .header-row
+            .left-buttons
+            a.btn(href="/admin/orders/export")
+                i.fas.fa-download
+                |  Xuất file
+            a.btn(href="/admin/orders/import")
+                i.fas.fa-upload
+                |  Nhập danh sách
+        .order-container
+            .filter-row
+            h3 Tất cả đơn hàng
+            .filter-controls
+                form(action="/admin/orders" method="get")
+                    .search-container
+                        input(type="text" name="search" placeholder="Tìm kiếm đơn hàng...")
+                        select(name="searchField")
+                            option(value="orderId") Mã đơn hàng
+                            option(value="createdAt") Ngày đặt hàng
+                            option(value="address") Địa chỉ giao hàng
+                            option(value="status") Trạng thái
+                        button.btn(type="submit") Tìm kiếm
+            .order-table
+                .table-header
+                    span Mã đơn hàng
+                    span Ngày đặt hàng
+                    span Số tiền
+                    span Địa chỉ giao hàng
+                    span Trạng thái
+                ul
+                    each order in orders
+                        li
+                            span #{order.orderId}
+                            span #{order.createdAt.toLocaleString()}
+                            span #{order.totalAmount} VND
+                            span #{order.address}
+                            span
+                                form(action=`/admin/orders/order/update/${order._id}` method="post")
+                                    input(type="hidden" name="orderId" value=order._id)
+                                    select(name="status" data-order-id=order._id)
+                                        option(value="Đang chờ xử lý" selected=order.status === 'Đang chờ xử lý') Đang chờ xử lý
+                                        option(value="Đang xử lý" selected=order.status === 'Đang xử lý') Đang xử lý
+                                        option(value="Đang giao hàng" selected=order.status === 'Đang giao hàng') Đang giao hàng
+                                        option(value="Đã hoàn thành" selected=order.status === 'Đã hoàn thành') Đã hoàn thành
+                                        option(value="Đã hủy" selected=order.status === 'Đã hủy') Đã hủy
+                                    button.btn(type="submit") Cập nhật
+            if successMessage
+                .alert.alert-success #{successMessage}

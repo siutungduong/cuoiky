@@ -1,0 +1,237 @@
+/* Định dạng tổng thể */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Container chính */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+
+/* Sidebar bên trái */
+.sidebar {
+  width: 15%;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar .header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 22px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.sidebar ul.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul.menu li {
+  position: relative; /* Để định vị sub-menu */
+}
+
+.sidebar ul.menu li .menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.sidebar ul.menu li .menu-item:hover {
+  background-color: #eaeaea;
+}
+
+.sidebar ul.menu li .menu-item .toggle-icon {
+  margin-left: auto; /* Đẩy dấu > sang cuối dòng */
+  font-size: 14px; /* Điều chỉnh kích thước nếu cần */
+  color: #888; /* Màu sắc cho dấu > */
+}
+
+.sidebar ul.menu li i {
+  margin-right: 10px;
+}
+
+.sidebar ul.menu li ul.submenu {
+  display: none; /* Ẩn sub-menu mặc định */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.sidebar ul.menu li:hover ul.submenu {
+  display: block; /* Hiển thị sub-menu khi hover */
+  padding: 5px 20px;
+  border-left: 2px solid #007bff;
+}
+
+.sidebar ul.menu li ul.submenu li {
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar ul.menu li ul.submenu li:hover {
+  background-color: #eaeaea;
+}
+
+.sidebar ul.menu li a {
+  text-decoration: none; /* Loại bỏ dấu gạch dưới */
+  color: inherit; /* Sử dụng màu chữ của phần tử cha */
+}
+
+.sidebar ul.menu li a:hover {
+  text-decoration: none; /* Loại bỏ dấu gạch dưới khi hover */
+  color: inherit; /* Sử dụng màu chữ của phần tử cha khi hover */
+}
+/* Content bên phải */
+.content {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.notifications button {
+  padding: 10px;
+  border: none;
+  background-color: lightgray; /* Xóa màu nền */
+  color: #007bff; /* Màu của icon */
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative; /* Để định vị badge */
+}
+
+.notifications button:hover {
+  background-color: transparent; /* Giữ màu nền trong suốt khi hover */
+  color: #0056b3; /* Đổi màu icon khi hover */
+}
+
+.notifications .badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+.account button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.notifications button:hover,
+.account button:hover {
+  background-color: #0056b3;
+}
+
+.main-content {
+  padding: 20px;
+  flex: 1;
+}
+
+/* Icon mẫu */
+.icon-overview:before { content: '📊'; }
+.icon-orders:before { content: '📦'; }
+.icon-products:before { content: '🛒'; }
+.icon-customers:before { content: '👤'; }
+.icon-promotions:before { content: '🎉'; }
+.icon-reports:before { content: '📈'; }
+.icon-apps:before { content: '📱'; }
+.icon-management:before { content: '🛠️'; }
+.icon-website:before { content: '🌐'; }
+.icon-facebook:before { content: '📘'; }
+.icon-notification:before { content: '🔔'; }
+
+/* Top - bar  */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 75px;
+}
+
+.search-bar input {
+  width: 700px; /* Adjust the width as needed */
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-left: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.notifications {
+  position: relative;
+}
+
+.notifications .badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+}
+
+.account .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  border: 1px solid black;
+  margin-right: 10px;
+}

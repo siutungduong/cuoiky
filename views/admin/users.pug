@@ -1,0 +1,39 @@
+extends ../adminlayout
+
+block main-content
+  h2 Quản lý người dùng
+  if successMessage
+    p.alert.alert-success= successMessage
+  if errorMessage
+    p.alert.alert-danger= errorMessage
+  form(action="/admin/users" method="get" class="search-form")
+    input(type="text" name="search" placeholder="Tìm kiếm người dùng...")
+    select(name="searchField")
+      option(value="firstName") First Name
+      option(value="lastName") Last Name
+      option(value="email") Email
+    button(type="submit") Tìm kiếm
+  if users && users.length
+    table
+      thead
+        tr
+          th Tên
+          th Email
+          th Vai trò
+          th Hành động
+      tbody
+        each user in users
+          tr
+            td= user.firstName + ' ' + user.lastName
+            td= user.email
+            td= user.isAdmin ? 'Admin' : 'User'
+            td
+              if !user.isAdmin
+                form(action=`/admin/users/admin-role/make/${user._id}` method="post" class="admin-role-form")
+                  button(type="submit") Phân quyền Admin
+              else
+                form(action=`/admin/users/admin-role/remove/${user._id}` method="post" class="admin-role-form")
+                  button(type="submit") Hủy quyền Admin
+  else
+    p Không có người dùng nào
+    p= JSON.stringify(users)

@@ -1,0 +1,143 @@
+/* Bao bọc toàn bộ vùng quản lý đơn hàng */
+.order-management {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header hàng đầu */
+  .order-management .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .order-management .header-row .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .order-management .header-row .btn i {
+    margin-right: 8px;
+  }
+  
+  .order-management .header-row .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Bộ lọc và tìm kiếm */
+  .order-management .filter-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .order-management .filter-controls .btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .order-management .filter-controls .btn:hover {
+    background-color: #218838;
+  }
+  
+  .order-management .filter-controls .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .order-management .filter-controls .search-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+  }
+  
+  .order-management .filter-controls .search-container i {
+    position: absolute;
+    right: 10px;
+    color: #888;
+  }
+  
+  /* Bảng đơn hàng */
+  .order-management .order-table {
+    width: 100%;
+  }
+  
+  .order-management .order-table .table-header {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 2fr 1fr 1fr;
+    font-weight: bold;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .order-management .order-table ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .order-management .order-table li {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 2fr 1fr 1fr;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+  }
+  
+  .order-management .order-table li:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  /* Trạng thái và hành động */
+  .order-management .order-table select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .order-management .order-table button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #ffc107;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .order-management .order-table button:hover {
+    background-color: #e0a800;
+  }
+  
+
+
+  .order-management .order-table .table-header,
+.order-management .order-table li {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 2fr 1fr 1fr; /* Đồng bộ cột */
+    gap: 10px; /* Tạo khoảng cách giữa các cột nếu cần */
+    align-items: center;
+}
+.order-management .order-table li span {
+    padding: 5px 35px;
+    text-align: left; /* Canh trái nội dung, nếu cần */
+}

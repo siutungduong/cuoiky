@@ -1,0 +1,40 @@
+extends ../../adminlayout
+
+block main-content
+  h1 Sản phẩm
+  .header-row
+    .left-buttons
+      a.btn(href="/admin/products/export")
+        i.fas.fa-download
+        |  Xuất file
+      a.btn(href="/admin/products/import")
+        i.fas.fa-upload
+        |  Nhập danh sách
+    a.btn.add-product(href="/admin/products/add") Thêm sản phẩm
+  .product-container
+    .filter-row
+      h3 Tất cả sản phẩm
+    .filter-controls
+        button.btn Lọc sản phẩm
+        .search-container
+        input(type="text", placeholder="Tìm kiếm sản phẩm...")
+        i.fas.fa-search
+    .product-table
+      .table-header
+        span Tên sản phẩm
+        span Loại sản phẩm
+        span Hình ảnh sản phẩm
+        span Giá sản phẩm
+        span Mã code sản phẩm
+        span Hành động
+      ul
+        each product in products
+          li
+            span #{product.name}
+            span #{product.type}
+            img(src=product.image, alt=product.name, width=100)
+            span #{product.price} VND
+            span #{product.productCode}
+            span
+              a.btn.edit(href=`/admin/products/edit/${product.id}`) Edit
+              a.btn.delete(href=`/admin/products/delete/${product.id}`) Delete 

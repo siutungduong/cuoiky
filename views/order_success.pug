@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .success-page
+    h1 Đặt hàng thành công
+
+    p Cảm ơn bạn #{user.firstName} #{user.lastName} đã đặt hàng! Đơn hàng của bạn đang được xử lý và sẽ sớm giao đến.
+
+    ul
+      li Mã đơn hàng: #{order.orderId}
+      li Ngày đặt hàng: #{order.createdAt.toLocaleString()}
+      li Số tiền: #{order.totalAmount} VND
+      li Địa chỉ giao hàng: #{order.address}
+
+    a.btn-href(href=`/order-details/${order._id}`) Xem chi tiết đơn hàng
+    a.btn-href(href="/") Quay lại trang chủ

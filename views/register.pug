@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Đăng kí tài khoản
+    link(rel="stylesheet" href="/stylesheets/register.css")
+  body(class="bg-slate-200 h-screen flex items-center justify-center")
+    .container
+      .form-box
+        h1 Đăng kí tài khoản
+        form(method="post" action="/account/register")
+          if error
+            p.error-message= error
+
+          // First Name
+          .form-group
+            label(for="firstName") Tên
+            input#firstName(type="text" name="firstName" placeholder="John" required)
+
+          // Last Name
+          .form-group
+            label(for="lastName") Họ
+            input#lastName(type="text" name="lastName" placeholder="Doe" required)
+
+          // Email
+          .form-group
+            label(for="email") Email
+            input#email(type="email" name="email" placeholder="john@example.com" required)
+
+          // Password
+          .form-group
+            label(for="password") Password
+            input#password(type="password" name="password" placeholder="********" required)
+
+          // Confirm Password
+          .form-group
+            label(for="confirm-password") Confirm Password
+            input#confirm-password(type="password" name="confirmpassword" placeholder="********" required)
+
+          // Register Button
+          button.register-button(type="submit") Đăng kí 
+
+          // Link to Login Page
+          p.login-text
+            | Đã có tài khoản 
+            a(href="/login" class="login-link") Đăng nhập 

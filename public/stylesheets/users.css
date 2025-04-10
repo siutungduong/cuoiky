@@ -1,0 +1,45 @@
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .search-form input, .search-form select, .search-form button {
+    padding: 5px;
+    font-size: 14px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  th {
+    background-color: #f4f4f4;
+  }
+  .admin-role-form button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  .alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  }
+  .alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+  }
+
+
+

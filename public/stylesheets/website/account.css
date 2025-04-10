@@ -1,0 +1,115 @@
+/* General container styling */
+.container-account {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  }
+  
+  /* Heading styles */
+  .container-account h1 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .container-account h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  /* User Info styling */
+  .container-account .user-info {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .container-account .user-info p {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .container-account .user-info strong {
+    color: #333;
+  }
+  
+  /* Error and success messages */
+  .container-account .error-message, .success-message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .container-account .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .container-account .success-message {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  /* Form styling */
+  .container-account form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container-account .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .container-account label {
+    font-size: 1rem;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .container-account  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  .container-account input[type="password"]:focus {
+    border-color: #4CAF50;
+  }
+  
+  .container-account .form-actions {
+    text-align: center;
+  }
+  
+  .container-account button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .container-account button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  

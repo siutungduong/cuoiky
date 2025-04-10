@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  h1 Thanh toán
+
+  div.checkout-container
+    // Display user information
+    div.user-info
+      h3 Thông tin của bạn
+      p Tên: #{user.firstName} #{user.lastName}
+      p Email: #{user.email}
+
+    // Form to capture additional details
+    form#checkoutForm(action="/place-order", method="POST")
+      div
+        label Số điện thoại:
+        input(type="text", name="phone", required=true, value=user.phone || "")
+
+      div
+        label Địa chỉ giao hàng:
+        textarea(name="address", rows="3", required=true)= user.address || ""
+
+      // Display product information
+      div.product-info-buy
+        h3 Sản phẩm trong đơn hàng
+        each item in cart
+          div.product-item
+            img(src=item.product.image, alt=item.product.name, width=100)
+            p Tên sản phẩm: #{item.product.name}
+            p Số lượng: #{item.quantity}
+            p Giá: #{item.product.price} VND
+            p Tổng: #{item.quantity * item.product.price} VND
+
+      div
+        label Tổng tiền:
+        span #{cartTotalAmount} VND
+
+      if error
+        p.error-message #{error}
+
+      button.btn-confirm(type="submit") Xác nhận thanh toán

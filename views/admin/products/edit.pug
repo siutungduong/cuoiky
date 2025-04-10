@@ -1,0 +1,24 @@
+extends ../../adminlayout
+
+block main-content
+  form(action=`/admin/products/edit/${product._id}`, method='POST', class='product-form')
+    h2 Chỉnh sửa sản phẩm
+    div
+      label(for='type') Loại sản phẩm
+      input(type='text', name='type', value=product.type, required=true)
+    div
+      label(for='name') Tên sản phẩm
+      input(type='text', name='name', value=product.name, required=true)
+    div
+      label(for='price') Giá sản phẩm
+      input(type='number', name='price', value=product.price, required=true)
+    div
+      label(for='image') Hình ảnh sản phẩm
+      input(type='text', name='image', value=product.image, id='image-url', required=true)
+      img(id='image-preview', class='image-preview')
+    div
+      label(for='brand') Thương hiệu 
+      input(type='text', name='brand', value=product.brand, required=true)
+    button(type='submit') Chỉnh sửa 
+    button(type='button', id='cancel-button') Hủy
+

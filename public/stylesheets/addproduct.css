@@ -1,0 +1,66 @@
+.product-form {
+    max-width: 80vw; /* Ensure the form does not exceed 80% of the viewport width */
+    margin: 0 30px; /* Center the form */
+    padding: 20px;
+    border-top: 5px solid #28a745; /* Green border with 2px thickness on top */
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}
+
+.product-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.product-form input[type="text"],
+.product-form input[type="number"] {
+    width: 100%; /* Make input fields take 100% of the form's width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.product-form .image-preview {
+    margin-top: 10px;
+    max-width: 100%; /* Ensure the image preview does not exceed the form's width */
+    height: 300px;
+    display: none; /* Hide the image preview by default */
+}
+
+.product-form button[type="submit"] {
+    background-color: #28a745; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-form button[type="submit"]:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.product-form button[type="button"] {
+    background-color: #dc3545; /* Red background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.product-form button[type="button"]:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.product-form h2{
+    margin-top: 0px;
+}

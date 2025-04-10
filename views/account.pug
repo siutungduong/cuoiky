@@ -1,0 +1,75 @@
+extends layout
+
+block content
+  .container-account
+    h1 Thông Tin Tài Khoản
+    .user-info
+      p
+        strong Họ và Tên: 
+        | #{user.lastName} #{user.firstName}
+      p
+        strong Email: 
+        | #{user.email}
+
+    h2 Đổi Mật Khẩu
+    if error
+      .error-message
+        p(style="color: red;") #{error}
+    if success 
+      .success-message
+        p(style="color: green;") #{success}
+    form(action="/account/change-password" method="POST")
+      .form-group
+        label(for="currentPassword") Mật khẩu hiện tại:
+        input(type="password" id="currentPassword" name="currentPassword" required)
+      .form-group
+        label(for="newPassword") Mật khẩu mới:
+        input(type="password" id="newPassword" name="newPassword" required minlength="6")
+      .form-group
+        label(for="confirmNewPassword") Nhập lại mật khẩu mới:
+        input(type="password" id="confirmNewPassword" name="confirmNewPassword" required minlength="6")
+      .form-actions
+        button(type="submit") Đổi mật khẩu
+
+    h2 Đơn Hàng Đã Thanh Toán
+    if orders && orders.length > 0
+      ul.order-list
+        each order in orders
+          li
+            p Mã đơn hàng: #{order.orderId}
+            p Ngày đặt hàng: #{order.createdAt.toLocaleString()}
+            p Số tiền: #{order.totalAmount} VND
+            p Địa chỉ giao hàng: #{order.address}
+            p Trạng thái: 
+              if order.status === 'Đang xử lý hoàn trả'
+                span(style="color: orange;" id=`countdown-${order._id}`) Đang xử lý hoàn trả: 60 giây
+              else if order.status === 'Đã hoàn trả'
+                span(style="color: red;") #{order.status} ✔
+              else
+                | #{order.status}
+            a.btn-href(href=`/order-details/${order._id}`) Xem chi tiết đơn hàng
+            if order.status === 'Đang chờ xử lý' || order.status === 'Đang xử lý' || order.status === 'Đang giao hàng'
+              button.btn-cancel(onclick=`cancelOrder('${order._id}')`) Hủy đơn hàng
+            else if order.status === 'Đã hủy'
+              button.btn-reorder(onclick=`reorder('${order._id}')`) Đặt lại đơn hàng
+            else if order.status === 'Đã hoàn thành'
+              button.btn-return(onclick=`returnOrder('${order._id}')`) Hoàn trả đơn hàng
+    else
+      p Bạn chưa có đơn hàng nào.
+
+  script.
+    document.addEventListener("DOMContentLoaded", () => {
+      const countdownElements = document.querySelectorAll("[id^='countdown-']");
+      countdownElements.forEach(element => {
+        let countdown = 60;
+        const interval = setInterval(() => {
+          countdown--;
+          element.textContent = `Đang xử lý hoàn trả: ${countdown} giây`;
+          if (countdown <= 0) {
+            clearInterval(interval);
+            element.textContent = 'Đã hoàn trả ✔';
+            element.style.color = 'red';
+          }
+        }, 1000);
+      });
+    });

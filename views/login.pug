@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Đăng nhập tài khoản
+    link(rel='stylesheet', href='/stylesheets/login.css')
+  body(class="bg-slate-200 h-screen flex items-center justify-center")
+    .container
+      .form-box
+        h1 Đăng nhập tài khoản
+        form(method="post" action="/account/login")
+          if error 
+            p.error-message= error
+
+          // Email
+          .form-group
+            label(for="email") Email
+            input#email(type="email" name="email" placeholder="john@example.com" required)
+
+          // Password
+          .form-group
+            label(for="password") Password
+            input#password(type="password" name="password" placeholder="********" required)
+
+          // Login Button
+          button.login-button(type="submit") Đăng nhập
+
+          // Link to Register Page
+          p.register-text
+            | Bạn chưa có tài khoản? 
+            a(href="/register" class="register-link") Đăng kí tại đây

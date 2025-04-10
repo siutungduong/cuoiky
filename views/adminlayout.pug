@@ -1,0 +1,86 @@
+doctype html
+html
+  head
+    title Korea Mart
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href="/stylesheets/product-styles.css")
+    link(rel="stylesheet", href="/stylesheets/addproduct.css")
+    link(rel="stylesheet", href="/stylesheets/users.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
+    link(rel='stylesheet', href='/stylesheets/admin.css')
+    script(src='/javascripts/scripts.js')
+  body
+    .container
+      // Phần menu bên trái 
+      .sidebar
+        .header Korea Mart
+        ul.menu
+          li
+            a.menu-item(href="/admin")
+              i.icon-overview
+              span Trang chủ
+          li
+            a.menu-item(href='/admin/orders')
+              i.icon-orders
+              span Đơn hàng
+              span.toggle-icon >
+            ul.submenu
+              li Danh sách đơn hàng
+              li Đơn hàng nháp
+              li Đơn hàng hoàn tất
+              li Phiếu giao dịch
+              li Quản lý COD
+          li
+            a.menu-item(href='/admin/products')
+              i.icon-products
+              span Sản phẩm
+              span.toggle-icon >
+            ul.submenu
+              li Danh sách sản phẩm 
+              li Danh mục sản phẩm
+              li Quản lý kho 
+          li
+            a.menu-item(href='/admin/users')
+              i.icon-customers
+              span Khách hàng
+          li
+            a.menu-item(href="/admin/promotion") 
+              i.icon-promotions
+              span Khuyến mãi
+          li
+            a.menu-item(href="/admin/report") 
+              i.icon-reports
+              span Báo cáo
+          li
+            .menu-item
+              i.icon-apps
+              span Ứng dụng
+          li
+            a.menu-item(href="/admin/manage") 
+              i.icon-management
+              span Quản lý
+          li
+            .menu-item
+              i.icon-website
+              span Website
+          li
+            .menu-item
+              i.icon-facebook
+              span Facebook
+      
+      // Phần nội dung bên phải
+      .content
+        .top-bar
+          .search-bar
+            input(type="text", placeholder="Nhập từ khóa tìm kiếm...")
+            button(type="submit") Tìm kiếm
+          .notifications
+            button
+              i.icon-notification
+              span.badge 3
+          .account
+            img.avatar(src="/images/gojo.jpg", alt="Avatar")
+            span CSKH Admin Gojo
+        block main-content
+        script(src='/javascripts/scripts.js')
+

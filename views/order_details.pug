@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/website/order_details.css')
+  .order-details-page
+    h1 Chi tiết đơn hàng
+
+    p Mã đơn hàng: #{order.orderId}
+    p Ngày đặt hàng: #{order.createdAt.toLocaleString()}
+    p Số tiền: #{order.totalAmount} VND
+    p Địa chỉ giao hàng: #{order.address}
+    p Trạng thái: #{order.status}
+
+    h2 Thông tin người dùng
+    p Tên: #{user.firstName} #{user.lastName}
+    p Email: #{user.email}
+    p Số điện thoại: #{order.phone}
+
+    h2 Sản phẩm trong đơn hàng
+    ul
+      each item in order.items
+        li
+          p Tên sản phẩm: #{item.product.name}
+          p Số lượng: #{item.quantity}
+          p Giá: #{item.product.price} VND
+          p Tổng: #{item.quantity * item.product.price} VND
+
+    a.btn-href(href="/account") Quay lại tài khoản

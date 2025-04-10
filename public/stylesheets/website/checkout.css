@@ -1,0 +1,169 @@
+/* Toàn bộ CSS cho trang thanh toán */
+
+/* Container chính */
+.checkout-container {
+    background-color: #f9f9f9;
+    padding: 30px 20px;
+    margin: 20px auto;
+    width: 70%; /* Có thể tùy chỉnh */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checkout-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Thông tin người dùng */
+  .checkout-container .user-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checkout-container .user-info h3 {
+    color: #444;
+    margin-bottom: 15px;
+  }
+  
+  .checkout-container .user-info p {
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  /* Form thông tin */
+  .checkout-container form#checkoutForm {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checkout-container form#checkoutForm div {
+    margin-bottom: 15px;
+  }
+  
+  .checkout-container form#checkoutForm label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+  }
+  
+  .checkout-container form#checkoutForm input[type="text"],
+  .checkout-container form#checkoutForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+  }
+  
+  .checkout-container form#checkoutForm input[type="text"]:focus,
+  .checkout-container form#checkoutForm textarea:focus {
+    border-color: #007bff;
+    background-color: #fff;
+  }
+  
+  .checkout-container form#checkoutForm .btn-confirm {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .checkout-container form#checkoutForm .btn-confirm:hover {
+    background-color: #0056b3;
+  }
+  
+  .checkout-container form#checkoutForm .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  /* Sản phẩm trong đơn hàng */
+  .product-info-buy {
+    margin: 20px 0;
+  }
+  
+  .product-info-buy h3 {
+    color: #444;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+  }
+  
+  .product-item {
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+
+  .product-item p{
+    margin:  0px 5px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .product-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 15px; /* Khoảng cách giữa hình ảnh và nội dung */
+    border-radius: 5px;
+  }
+  
+  .product-item .product-details {
+    flex: 1; /* Để phần thông tin sản phẩm chiếm toàn bộ không gian còn lại */
+  }
+  
+  .product-item .product-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .product-item .product-details p:first-child {
+    font-weight: bold; /* Tên sản phẩm in đậm */
+  }
+  
+  .product-item .product-details p:last-child {
+    color: #333; /* Tổng giá trị in màu đậm hơn */
+    font-weight: bold;
+  }
+  
+  /* Nút xác nhận */
+  .btn-confirm {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-confirm:hover {
+    background-color: #218838;
+  }
+  
+  /* Thông báo lỗi */
+  .error-message {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  

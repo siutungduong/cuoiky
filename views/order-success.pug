@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Đặt hàng thành công
+
+  p Cảm ơn bạn đã đặt hàng! Đơn hàng của bạn đang được xử lý và sẽ sớm giao đến.
+
+  ul
+    li Mã đơn hàng: #{order._id}
+    li Ngày đặt hàng: #{order.createdAt.toLocaleString()}
+    li Số tiền: #{order.totalAmount} VND
+
+  a.btn-href(href="/") Quay lại trang chủ

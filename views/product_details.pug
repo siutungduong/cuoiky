@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .product-details
+    h1.product-title #{product.name}
+    img.product-image(src=product.image alt=product.name)
+    p.product-type Loại sản phẩm: #{product.type}
+    p.product-price Giá: #{product.price} VND
+    p.product-brand Thương hiệu: #{product.brand}
+    p.product-code Mã sản phẩm: #{product.productCode}
+    a.back-link(href="/website/list_all_product") Quay lại danh sách sản phẩm
+    button.add-to-cart(onclick=`addToCart('${product._id}')`) Thêm vào giỏ hàng

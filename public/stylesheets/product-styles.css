@@ -1,0 +1,320 @@
+h1 {
+    text-align: start;
+    margin-bottom: 20px;
+    margin-left: 50px;
+  }
+  h3{
+    margin-left: 25px;
+  }
+  
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-row .left-buttons {
+    margin-left: 30px;
+    display: flex;
+    width: 21%;
+    justify-content: space-between;
+  }
+  
+  .header-row .add-product {
+    background-color: blue;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .header-row .btn {
+    margin: 0 10px;
+  }
+  
+  .product-container {
+    margin-top: 20px;
+    margin-left: 30px;
+    background-color: white;
+  }
+
+  .product-container .filter-row {
+    position: relative;
+  }
+  
+  .product-container .filter-row::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 20px;
+    width: 160px; 
+    height: 2px; 
+    background-color: blue;
+  }
+  
+  .product-container .filter-row::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    right: 0;
+    margin-right: 20px;
+    height: 2px; 
+    background-color: lightgray;
+  }
+  
+  .filter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-controls .btn {
+    margin-right: 10px;
+  }
+  
+  .filter-controls input {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .product-table {
+    width: 100%;
+  }
+  
+  .table-header {
+    display: flex;
+    /* justify-content: space-evenly; */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .table-header span {
+    flex: 1; /* Default flex value */
+    text-align: center;
+  }
+  
+  /* Custom widths for each column */
+  .table-header span:nth-child(1) {
+    flex: 3; /* Adjust flex value as needed */
+  }
+  
+  .table-header span:nth-child(2) {
+    flex: 1; /* Adjust flex value as needed */
+  }
+  
+  .table-header span:nth-child(3) {
+    flex: 1; /* Adjust flex value as needed */
+  }
+
+  .table-header span:nth-child(4) {
+    flex: 1; /* Adjust flex value as needed */
+  }
+  
+  .table-header span:nth-child(5) {
+    flex: 1; /* Adjust flex value as needed */
+  }
+  
+  .table-header span:nth-child(6) {
+    flex: 1; /* Adjust flex value as needed */
+  }
+
+  .product-table ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .product-table li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc; /* Add this line to create horizontal lines */
+    padding: 10px 0;
+  }
+
+  .product-table li:last-child {
+    border-bottom: none; /* Remove border from the last item */
+  }
+  
+  .product-table li span {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Custom widths for each column */
+  .product-table li span:nth-child(1) {
+    flex: 3; /* Adjust flex value as needed */
+  }
+
+  .product-table li span:nth-child(2) {
+    flex: 1.2; /* Adjust flex value as needed */
+  }
+
+  .product-table li span:nth-child(3) {
+    flex: 2; /* Adjust flex value as needed */
+  }
+
+  .product-table li span:nth-child(4) {
+    padding-left: 15px;
+    flex: 1.2; /* Adjust flex value as needed */
+  }
+  
+  .product-table li span:nth-child(5) {
+    flex: 1; /* Adjust flex value as needed */
+  }
+  
+  .product-table li span:nth-child(6) {
+    flex: 1; /* Adjust flex value as needed */
+  }
+  
+  .product-table li img {
+    flex: 2;
+    max-width: 100px;
+  }
+  
+  .product-table li .btn {
+    margin-left: 10px;
+  }
+   a {
+    text-decoration: none; /* Loại bỏ dấu gạch dưới */
+    color: inherit; /* Sử dụng màu chữ của phần tử cha */
+  }
+  
+   a:hover {
+    text-decoration: none; /* Loại bỏ dấu gạch dưới khi hover */
+    color: inherit; /* Sử dụng màu chữ của phần tử cha khi hover */
+  }
+
+  .btn i.fas {
+    margin-right: 5px;
+  }
+
+  .product-container .filter-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    background-color: #f8f8f8; 
+    padding: 10px 10px;
+    border-radius: 5px; 
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+  
+  .filter-controls .btn {
+    margin-right: 10px;
+    padding: 10px 20px; /* Padding for better appearance */
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .filter-controls input {
+    flex: 1;
+    padding: 10px; /* Padding for better appearance */
+    font-size: 16px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    margin-left: 10px; /* Space between button and input */
+  }
+  
+  .search-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc; /* Light gray color for the icon */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  
+  .filter-controls .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .filter-controls input:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+  }
+
+  .filter-controls .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .filter-controls input:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+  }
+
+  ul.table-header, ul.product-table {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul.table-header li, ul.product-table li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  ul.table-header li {
+    font-weight: bold;
+    background-color: #f8f8f8;
+  }
+  
+  ul.product-table li {
+    background-color: white;
+  }
+  
+  ul.table-header li span, ul.product-table li span {
+    flex: 1;
+    text-align: center;
+  }
+  
+  ul.product-table li img {
+    flex: 1;
+    max-width: 100px;
+  }
+  
+  ul.product-table li .btn {
+    margin-left: 10px;
+  }
+  
+
+  a.btn.edit {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+a.btn.delete {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 3px;
+    
+}
+
+a.btn.edit:hover {
+    background-color:  darkgreen;
+}
+
+a.btn.delete:hover {
+    background-color: darkred;
+}
