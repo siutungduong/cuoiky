@@ -14,14 +14,14 @@ const User = mongoose.model("User", userSchema, 'users');
 
 (async () => {
   try {
-    const adminEmail = 'luanvo.10042004@gmail.com';
+    const adminEmail = 'duc100100@gmail.com';
     const adminUser = await User.findOne({ email: adminEmail });
     if (!adminUser) {
       const newAdmin = new User({
         firstName: 'Admin',
         lastName: 'User',
         email: adminEmail,
-        password: await bcrypt.hash('defaultpassword', 10), 
+        password: await bcrypt.hash('123456', 10), 
         isAdmin: true
       });
       await newAdmin.save();

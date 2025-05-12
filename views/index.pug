@@ -3,84 +3,87 @@ extends layout
 block content
     .container
         .section1
-          img(src="/images/slider_1.png", alt="Image", class="rounded-image")
+          img(src="/images/1.jpg", alt="Image", class="rounded-image")
         .section2
-          .title
-            .text-container
-              h2 HÀNG BÁN CHẠY
-              h4 Khám phá các sản phẩm bán chạy
-            button.buy-right(class="btn-buy") Mua ngay
-          .row1
-            button.previous &lt;
-            .products
-              each product, index in products.slice(0, 5)
-                .product
-                  img(src=product.image, alt=product.name)
-                  .info
-                    p.type #{product.type}
-                    p.name #{product.name}
-                    .price-cart
-                      span #{product.price} VND
-                      button.add-to-cart(onclick=`addToCart('${product._id}')`)
-                        i.fa.fa-bag-shopping
-                    p.count Số lượng đã bán: 0
-            button.next &gt;
+    .container
+      .header
+        .title-container
+          h2 HÀNG BÁN CHẠY
+          h4 Khám phá các sản phẩm bán chạy nhất
+  
+      .product-slider
+        
+        .product-list
+          each product in products.slice(0, 5)
+            .product-item
+              .product-image
+                img(src=product.image, alt=product.name)
+              .product-details
+                p.product-type #{product.type}
+                p.product-name #{product.name}
+                .price-cart
+                  span.price #{product.price} VND
+                  button.add-to-cart(onclick=`addToCart('${product._id}')`)
+                    i.fa.fa-shopping-cart
+                p.sold-count Số lượng đã bán: 0
+        
+
         .section3
           .row3
             .container
               .food-item
-                img(src="/images/kimchi.png", alt="Kim Chi", class="rounded-image")
+                img(src="/images/6.png", alt="Kim Chi", class="rounded-image")
                 .overlay
-                  p.title Kim chi
-                  button.buy-now(class="btn-buy") Mua sắm ngay
+                  //- p.title Xe Tay Ga
+                  //- button.buy-now(class="btn-buy") Mua sắm ngay
               .food-item
-                img(src="/images/mihanquoc.png", alt="Mì Hàn Quốc", class="rounded-image")
+                img(src="/images/7.png", alt="Mì Hàn Quốc", class="rounded-image")
                 .overlay
-                  p.title Mì Hàn Quốc
-                  button.buy-now(class="btn-buy") Mua sắm ngay
+                  //- p.title Xe Số
+                  //- button.buy-now(class="btn-buy") Mua sắm ngay
               .food-item
-                img(src="/images/rongbien.png", alt="Rong biển", class="rounded-image")
+                img(src="/images/8.png", alt="Rong biển", class="rounded-image")
                 .overlay
-                  p.title Rong biển
-                  button.buy-now(class="btn-buy") Mua sắm ngay
+                  //- p.title Xe Côn Tay
+                  //- button.buy-now(class="btn-buy") Mua sắm ngay
               .food-item
-                img(src="/images/ruouhanquoc.png", alt="Rượu Hàn Quốc", class="rounded-image")
+                img(src="/images/9.png", alt="Rượu Hàn Quốc", class="rounded-image")
                 .overlay
-                  p.title Rượu Hàn Quốc
-                  button.buy-now(class="btn-buy") Mua sắm ngay 
-        .section4
+                  //- p.title Xe Điện
+                  //- button.buy-now(class="btn-buy") Mua sắm ngay 
+        //- .section4
           h2 XIN CHÀO KOREA MART 
-        .section5
-          .header
-            .left
-              h4 Đồ uống các loại
-            .right.navbar
-              ul
-                li
-                  a(href="/") Trang chủ
-                li
-                  a(href="/products") Tất cả sản phẩm
-                li
-                  a(href="/stores") Hệ thống cửa hàng
-                li
-                  a(href="/about") Giới thiệu
-                li
-                  a(href="/all") Xem tất cả
-          .row5
-            .products-container
-              .products
-                img(src="/images/wolf_module_product_banner_3.png", alt="Rong biển", class="rounded-image")
-                each product, index in [products[0], ...products.slice(1, 4)]
-                  .product
-                    img(src=product.image, alt=product.name)
-                    .info
-                      p.type #{product.type}
-                      p.name #{product.name}
-                      .price-cart
-                        span #{product.price} VND
-                        button.add-to-cart(onclick=`addToCart('${product._id}')`) 
-                          i.fa.fa-bag-shopping
-        .section6
+        //- .section5
+        //-   .header
+        //-     .left
+        //-       h4 Đồ uống các loại
+        //-     .right.navbar
+        //-       ul
+        //-         li
+        //-           a(href="/") Trang chủ
+        //-         li
+        //-           a(href="/products") Tất cả sản phẩm
+        //-         li
+        //-           a(href="/stores") Hệ thống cửa hàng
+        //-         li
+        //-           a(href="/about") Giới thiệu
+        //-         li
+        //-           a(href="/all") Xem tất cả
+        //-   .row5
+        //-     .products-container
+        //-       .products
+        //-         img(src="/images/wolf_module_product_banner_3.png", alt="Rong biển", class="rounded-image")
+        //-         each product, index in [products[0], ...products.slice(1, 4)]
+        //-           .product
+        //-             img(src=product.image, alt=product.name)
+        //-             .info
+        //-               p.type #{product.type}
+        //-               p.name #{product.name}
+        //-               .price-cart
+        //-                 span #{product.price} VND
+        //-                 button.add-to-cart(onclick=`addToCart('${product._id}')`) 
+        //-                   i.fa.fa-bag-shopping
+        //- .section6
           .row6
             .left
               img(src="/images/wolf_banner_small.png", alt="Hồng Sâm", class="rounded-image") 
@@ -95,7 +98,7 @@ block content
         .section7
           .row7
             .image-container
-              img(src="/images/feature_banner_1.png", alt="Image 1", class="image")
+              img(src="/images/4.jpg", alt="Image 1", class="image")
             .image-container
-              img(src="/images/feature_banner_2.png", alt="Image 2", class="image")
+              img(src="/images/5.jpg", alt="Image 2", class="image")
         .section8

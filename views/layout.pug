@@ -13,19 +13,19 @@ html
     script(src='/javascripts/scripts.js')
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
   body
-    .header
-      .section1
-        .container.first Tìm cửa hàng
-        .container Hỗ trợ mua hàng
-      .section2
-        .container.first Sản phẩm đã xem
-        .container Yêu thích
-        if (isAdmin)
-          .container.end
-            a(href="/admin/products") Admin Page
+    //- .header
+    //-   .section1
+    //-     .container.first Tìm cửa hàng
+    //-     .container Hỗ trợ mua hàng
+    //-   .section2
+    //-     .container.first Sản phẩm đã xem
+    //-     .container Yêu thích
+    //-     if (isAdmin)
+    //-       .container.end
+    //-         a(href="/admin/products") Admin Page
     .navbar
       .logo
-        img(src="/images/logo.png" alt="Logo")
+        img(src="/images/3.jpg" alt="Logo")
       .search-bar
         form(action="/website/list_all_product" method="get")
           input(type="text" name="query" placeholder="Bạn cần tìm gì?")
@@ -221,73 +221,228 @@ html
               a(href="/warranty-policy") Chính sách bảo hành
     .main-content
       block content
-    footer
-      .footer-row
-        .footer-item
-          img(src="/images/footer_policy_img_1.png", alt="Image 1")
-          p ĐẶT HÀNG TIỆN LỢI
-        .footer-item
-          img(src="/images/footer_policy_img_2.png", alt="Image 2")
-          p GIAO HÀNG NHANH CHÓNG
-        .footer-item
-          img(src="/images/footer_policy_img_3.png", alt="Image 3")
-          p NHẬP KHẨU TRỰC TIẾP TỪ HÀN QUỐC
-      .footer-row
-        .footer-column
-          .footer-column-row
-            img(src="/images/footer-logo.png", alt="Location Icon", class="top-left")
-          .footer-column-row
-            .content
-              i.fa.fa-location-dot
-              p 17 ĐƯỜNG D15A, P. PHƯỚC LONG B, TP.THỦ ĐỨC, HCM
-          .footer-column-row
-            img(src="/images/logo-thong-bao-website.png", alt="Bottom Left Image", class="bottom-left")
-        .footer-column
-          .footer-column-row
-            p(style= "font-size:20px") Hỗ trợ khách hàng
-          .footer-column-row.contact-info-row
-            img(src="/images/footer-phone.png", alt="Support Image", class="support-image")
-            .contact-info
-              p 0934721989
-              p TỔNG ĐÀI TRỰC 24/24
-          .footer-column-row
-            img(src="/images/footer-email.png", alt="Email Image", class="email-image")
-            p luanvo.100404@gmail.com
-          .footer-column-row
-            .icons
-              i.fa-brands.fa-facebook-f
-              i.fa-brands.fa-twitter
-              i.fa-brands.fa-youtube
-              i.fa-brands.fa-instagram
-        .footer-column
-          .footer-column-row
-            p.danh-muc(style="font-size:20px") Danh mục 
-          .footer-column-row.column-3-row-2
-            .container
-              .row
-                p Trang chủ
-              .row
-                p Giới thiệu
-              .row
-                p Sản phẩm
-        .footer-column
-          .footer-column-row
-            p.chinh-sach(style="font-size:20px") Chính sách khách hàng
-          .footer-column-row.column-4-row-2
-            .container
-              .row
-                p Chính sách bảo mật 
-              .row
-                p Chính sách vận chuyển
-              .row
-                p Chính sách đổi trả
-              .row
-                p Chính sách thanh toán
-              .row
-                p Chính sách sử dụng
-    .footer-copyright-row
-      p.footer-copyright
-        | © Bản quyền thuộc về 
-        strong Xin Chào Korea Mart
-        |  | Cung cấp bởi Sapo, copyright
+    //- footer
+    //-   .footer-row
+    //-     .footer-item
+    //-       img(src="/images/footer_policy_img_1.png", alt="Image 1")
+    //-       p ĐẶT HÀNG TIỆN LỢI
+    //-     .footer-item
+    //-       img(src="/images/footer_policy_img_2.png", alt="Image 2")
+    //-       p GIAO HÀNG NHANH CHÓNG
+    //-     .footer-item
+    //-       img(src="/images/footer_policy_img_3.png", alt="Image 3")
+    //-       p SẢN XUẤT TRỰC TIẾP TỪ VIỆT NAM
+    //-   .footer-row
+    //-     .footer-column
+    //-       .footer-column-row
+    //-         //- img(src="/images/footer-logo.png", alt="Location Icon", class="top-left")
+    //-         <img src="https://www.honda.com.vn/images/logo_honda_v1.png?v=20250409" alt="HONDA Việt Nam">
+    //-       .footer-column-row
+    //-         .content
+    //-           i.fa.fa-location-dot
+    //-           p 33 XÔ VIẾT NGHỆ TỈNH
+    //-       .footer-column-row
+    //-         img(src="/images/logo-thong-bao-website.png", alt="Bottom Left Image", class="bottom-left")
+    //-     .footer-column
+    //-       .footer-column-row
+    //-         p(style= "font-size:20px") Hỗ trợ khách hàng
+    //-       .footer-column-row.contact-info-row
+    //-         img(src="/images/footer-phone.png", alt="Support Image", class="support-image")
+    //-         .contact-info
+    //-           p 0898177251
+    //-           p TỔNG ĐÀI TRỰC 24/24
+    //-       .footer-column-row
+    //-         img(src="/images/footer-email.png", alt="Email Image", class="email-image")
+    //-         p ducduy15102004@gmail.com
+    //-       .footer-column-row
+    //-         .icons
+    //-           i.fa-brands.fa-facebook-f
+    //-           i.fa-brands.fa-twitter
+    //-           i.fa-brands.fa-youtube
+    //-           i.fa-brands.fa-instagram
+    //-     .footer-column
+    //-       .footer-column-row
+    //-         p.danh-muc(style="font-size:20px") Danh mục 
+    //-       .footer-column-row.column-3-row-2
+    //-         .container
+    //-           .row
+    //-             p Trang chủ
+    //-           .row
+    //-             p Giới thiệu
+    //-           .row
+    //-             p Sản phẩm
+    //-     .footer-column
+    //-       .footer-column-row
+    //-         p.chinh-sach(style="font-size:20px") Chính sách khách hàng
+    //-       .footer-column-row.column-4-row-2
+    //-         .container
+    //-           .row
+    //-             p Chính sách bảo mật 
+    //-           .row
+    //-             p Chính sách vận chuyển
+    //-           .row
+    //-             p Chính sách đổi trả
+    //-           .row
+    //-             p Chính sách thanh toán
+    //-           .row
+    //-             p Chính sách sử dụng
+    //- .footer-copyright-row
+    //-   p.footer-copyright
+    //-     | © Bản quyền thuộc về 
+    //-     strong Xin Chào Korea Mart
+    //-     |  | Cung cấp bởi Sapo, copyright
 
+
+//- footer.footer
+  .footer-container
+    .footer-top
+      .footer-info
+        img(src="https://www.honda.com.vn/images/logo_honda_v1.png?v=20250409", alt="Honda Logo")
+        p Công ty Honda Việt Nam
+        p 
+          strong Số GCNĐKDN: 
+          span 2500150543
+        p 
+          strong Đăng ký lần đầu: 
+          span Ngày 26/6/2008
+        p 
+          strong Đăng ký thay đổi lần thứ 14: 
+          span Ngày 03/4/2023
+        p 
+          strong Cơ quan cấp: 
+          span Phòng Đăng ký kinh doanh – Sở Kế hoạch và Đầu tư Vĩnh Phúc
+        p 
+          strong Địa chỉ: 
+          span Phường Phúc Thắng, Thành Phố Phúc Yên, Tỉnh Vĩnh Phúc, Việt Nam
+        p
+          strong Email: 
+          | cr@honda.com.vn
+        p
+          strong Hotline:
+          | 1800 8001 (Miễn phí cho tất cả thuê bao)
+        img(src="https://www.honda.com.vn/images/logo-thong-bao-website.png", alt="Thông báo", class="thong-bao")
+
+      .footer-links
+        .link-column
+          h4 Ô tô
+          ul
+            li Sản phẩm
+            li Khuyến mãi
+            li Sự kiện
+            li Lái thử xe
+            li Đại lý
+            li Dịch vụ sau bán hàng
+            li Phụ tùng và phụ kiện
+            li Xe qua sử dụng
+            li Tin tức
+        .link-column
+          h4 Xe máy
+          ul
+            li Sản phẩm
+            li Khuyến mãi
+            li Sự kiện
+            li Cửa hàng ủy nhiệm
+            li Dịch vụ sau bán hàng
+            li Phụ tùng và phụ kiện
+            li Tin tức
+        .link-column
+          h4 Về Honda
+          ul
+            li Honda toàn cầu
+            li Honda Việt Nam
+            li Đóng góp xã hội
+            li Tin tức
+        .link-column
+          h4 An toàn giao thông
+          ul
+            li Trung tâm đào tạo
+            li Hoạt động đào tạo cho cộng đồng
+            li Tài liệu đào tạo
+            li Cuộc thi ATGT
+            li Tin tức
+        .link-column
+          h4 Về Honda toàn cầu
+          ul
+            li Website Honda toàn cầu
+            li Khẩu hiệu toàn cầu
+            li Lịch sử Honda
+            li Triết lý Honda
+
+    .footer-bottom
+      p Kết nối với Honda Việt Nam
+      .social-icons
+        i.fa-brands.fa-facebook
+        i.fa-brands.fa-youtube
+        i.fa-brands.fa-instagram
+
+    .footer-copyright
+      p © 2024. Copyright by Honda VietNam
+
+
+.footer
+      .container
+        .col
+          img(src="/images/3.jpg", alt="Honda Logo", width="150")
+          h4 Công ty Honda Việt Nam
+          p Số GCNĐKDN: 2500150543
+          p Đăng ký lần đầu: Ngày 26/6/2008
+          p Đăng ký thay đổi lần thứ 14: Ngày 03/4/2023
+          p Cơ quan cấp: Phòng Đăng ký kinh doanh - Sở Kế hoạch và Đầu tư Vĩnh Phúc
+          p Địa chỉ: Phường Phúc Thắng, Thành Phố Phúc Yên, Tỉnh Vĩnh Phúc, Việt Nam
+        .col
+          h4 Ô tô
+          p Sản phẩm
+          p Khuyến mãi
+          p Sự kiện
+          p Lái thử xe
+          p Đại lý
+          p Dịch vụ sau bán hàng
+          p Phụ tùng và phụ kiện
+          p Xe qua sử dụng
+          p Tin tức
+        .col
+          h4 Xe máy
+          p Sản phẩm
+          p Khuyến mãi
+          p Sự kiện
+          p Cửa hàng ủy nhiệm
+          p Dịch vụ sau bán hàng
+          p Phụ tùng và phụ kiện
+          p Tin tức
+        .col
+          h4 Về Honda
+          p Honda toàn cầu
+          p Honda Việt Nam
+          p Đóng góp xã hội
+          p Tin tức
+        .col
+          h4 An toàn giao thông
+          p Trung tâm đào tạo
+          p Hoạt động đào tạo cho cộng đồng
+          p Tài liệu đào tạo
+          p Cuộc thi ATGT
+          p Tin tức
+        .col
+          h4 Đua xe thể thao
+          p Hoạt động của Honda toàn cầu
+          p Hoạt động của Honda Việt Nam
+          p Tin tức
+        .col
+          h4 Về Honda toàn cầu
+          a.external(href="#") Website Honda toàn cầu
+          a.external(href="#") Khẩu hiệu toàn cầu
+          a.external(href="#") Lịch sử Honda
+          a.external(href="#") Triết lý Honda
+        .col
+          h4 Kết nối với Honda Việt Nam
+          .social-icons
+            a(href="#") 🕊
+            a(href="#") 📺
+            a(href="#") 👤
+            a(href="#") 📷
+      //- .contact
+      //-   p Email: cr@honda.com.vn
+      //-   p Hotline: 1800 8001 (Miễn phí cho tất cả thuê bao)
+      .bottom
+        p Terms and Conditions | Privacy Policy | Cookie Policy
+        p © 2024. Copyright by Honda Vietnam

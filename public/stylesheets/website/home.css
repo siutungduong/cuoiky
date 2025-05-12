@@ -179,7 +179,7 @@
     left: 30; /* Gắn overlay sát biên trái */
     width: 50%; /* Overlay bao phủ toàn bộ chiều rộng food-item */
     height: 100%; /* Overlay bao phủ toàn bộ chiều cao food-item */
-    color: black; /* Màu chữ */
+    color: white; /* Màu chữ */
     display: flex; /* Hiển thị nội dung dạng flex */
     flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
     justify-content: center; /* Canh giữa nội dung theo chiều dọc */
@@ -397,3 +397,27 @@
         display: block;
       }
     
+
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      
+      .product-item {
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+      }
+      
+      .label-new {
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-top: 5px;
+      }
+      
